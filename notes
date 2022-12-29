@@ -1,0 +1,68 @@
+Two ways to create spring boot project
+1. using https://start.spring.io/ website
+2. create a maven project and add all dependecies.
+
+in Spring/Spring boot, there is a container called IOC (Inversion Of Control) which is responsible to create any object.
+Once object got created we can get that object from that container.
+
+design pattern is a solution for re-occuring problems.
+
+bean=object
+
+IOC container is design pattern, which is responsible to create an bean, and manages the bean life cycle and
+provide dependency injection.
+
+In Spring every java class is treated as a bean.
+
+Dependency Injection:
+for example
+
+Class A{
+ B b = new B(); // tight coupling
+ b.m1();
+
+
+}
+
+class B{
+
+void m1(){
+
+}
+
+}
+
+class A is depending on class B, now class B will get injected into class A by using IOC container.
+
+There are diffrent types of dependency injections there:
+1. setter injection
+2. constructor injection
+3. field injection
+
+
+interface Dao{
+public void displayData();
+}
+
+class MySqlDaoImpl implements Dao{
+
+public void displayData(){
+sout("mysql");
+}
+
+}
+
+class OracleDaoImpl implements Dao{
+
+public void displayData(){
+sout("oracle");
+}
+
+}
+
+
+class Test{
+Dao dao=new OracleDaoImpl();
+dao.displayData();
+}
+

@@ -10,13 +10,15 @@ public class SpringBootHelloWorldApplication {
 	public static void main(String[] args) {
 
 		ConfigurableApplicationContext context=SpringApplication.run(SpringBootHelloWorldApplication.class, args);
-		HelloWorld helloWorld=context.getBean(HelloWorld.class);
+		/*HelloWorld helloWorld=context.getBean(HelloWorld.class);
 		helloWorld.printWish();
 		PrintDateTime pdt=context.getBean(PrintDateTime.class);
 		pdt.printDateTime();
 
 		Test test=context.getBean(Test.class);
-		test.displayPrintTestData();
+		test.displayPrintTestData();*/
+		Traveller traveller=context.getBean(Traveller.class);
+		traveller.startJourney();
 
 	}
 

@@ -66,3 +66,142 @@ Dao dao=new OracleDaoImpl();
 dao.displayData();
 }
 
+Tight coupling:
+
+If one class calling another class logic it is called collaboration.
+
+when one class is collaborating with another class then there exist tight coupling between two classes.
+
+when one class wants to call the logic of the second class then first class need an object of second class,it
+means, first class create an object of second class.
+
+
+public class Traveller{
+Car c= new Car();
+public void startJourney(){
+   c.move();
+}
+}
+
+public class Car{
+
+public void move(){
+
+}
+
+}
+
+For example I want use Bike to travel then we have to change the logic in Traveler class.
+
+public class Traveller{
+Bike b= new Bike();
+public void startJourney(){
+   b.move();
+}
+}
+
+public class Bike{
+
+public void move(){
+
+}
+
+}
+
+
+Loose coupling:
+
+In Loose coupling, when one object is depending on another object ,
+some external entity will provide dependency object to the dependent object(main object),
+so here external entity is called container.
+
+In order to achieve loose coupling we have to follow POJI / POJO model.
+
+                Vehicle (I)
+                 1. Car
+                 2. Bike
+
+   public Interface Vehicle{
+        public void move();
+   }
+
+   public class Bike implements Vehicle{
+
+       public void move(){
+
+       }
+   }
+
+   public class Car implements Vehicle{
+
+       public void move(){
+
+       }
+
+   }
+
+ public class Traveller{
+   Vehicle v;
+   public void setV(Vehicle v){
+   this.v=v;
+   }
+ public void startJourney(){
+    v.move();
+ }
+ }
+
+List list= new ArrayList();
+list.add(134);
+
+========================================================
+Spring core module
+1. we can develop standalone applications in java
+2. we can achieve dependency injection.
+3. we can manage the life cycle of beans.
+4. we can use annotations or configuration files to develop spring application.
+5. we can achieve loose coupling.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
